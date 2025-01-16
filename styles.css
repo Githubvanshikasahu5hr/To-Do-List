@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(145deg, lightblue, purple);
+    padding: 10px;
+}
+.To-Do-App{
+    width: 100%;
+    max-width: 550px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.To-Do-App h2 i{
+    margin-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    margin-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    background-color: rgb(216, 214, 214);
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    width: 70%;
+    background: transparent;
+    padding: 10px;
+}
+#todo-form button{
+    border: none;
+    outline: none;
+    padding: 15px 50px;
+    background-color: plum;
+    color: white;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.filters .filter {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.filters .filter.active {
+    background-color: plum;
+    color: white;
+}
+ul{
+    list-style: none;
+    text-decoration: none;
+}
+li{
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 8px;
+    border-radius: 5px;
+}
+li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+li button {
+    margin-left: 5px;
+    background-color: plum;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
