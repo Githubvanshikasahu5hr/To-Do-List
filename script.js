@@ -1,18 +1,14 @@
-// Select DOM elements
 const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 const filters = document.querySelectorAll('.filter');
 
-// Load tasks from localStorage
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-// Save tasks to localStorage
 const saveTasks = () => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-// Render tasks
 const renderTasks = (filter = 'all') => {
     todoList.innerHTML = '';
     tasks
@@ -32,7 +28,6 @@ const renderTasks = (filter = 'all') => {
         });
 };
 
-// Add a task
 todoForm.addEventListener('submit', e => {
     e.preventDefault();
     const taskName = todoInput.value.trim();
@@ -44,14 +39,12 @@ todoForm.addEventListener('submit', e => {
     }
 });
 
-// Toggle task completion
 const toggleTask = index => {
     tasks[index].completed = !tasks[index].completed;
     saveTasks();
     renderTasks();
 };
 
-// Edit a task
 const editTask = index => {
     const newTaskName = prompt('Edit Task', tasks[index].name);
     if (newTaskName) {
@@ -61,14 +54,12 @@ const editTask = index => {
     }
 };
 
-// Delete a task
 const deleteTask = index => {
     tasks.splice(index, 1);
     saveTasks();
     renderTasks();
 };
 
-// Filter tasks
 filters.forEach(filter => {
     filter.addEventListener('click', () => {
         document.querySelector('.filter.active').classList.remove('active');
@@ -77,5 +68,4 @@ filters.forEach(filter => {
     });
 });
 
-// Initial render
 renderTasks();
